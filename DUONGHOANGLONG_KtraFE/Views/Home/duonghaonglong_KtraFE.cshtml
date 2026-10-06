@@ -1,0 +1,518 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>duonghaonglong_KtraFE</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Amazon Ember", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #e3e6e6;
+        }
+
+        .navbar {
+            height: 60px;
+            background-color: #131921;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            gap: 15px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff9900;
+            cursor: pointer;
+        }
+
+        .nav-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .line-1 {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .line-2 {
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-search {
+            display: flex;
+            flex: 1;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-select {
+            background: #f3f3f3;
+            border: none;
+            padding: 0 10px;
+            font-size: 12px;
+            border-right: 1px solid #ddd;
+            outline: none;
+        }
+
+        .search-input {
+            width: 100%;
+            border: none;
+            padding: 0 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .search-btn {
+            background-color: #febd69;
+            border: none;
+            width: 45px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+            .search-btn:hover {
+                background-color: #f3a847;
+            }
+
+        .nav-tools {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-item {
+            cursor: pointer;
+        }
+
+        .nav-cart {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+            .nav-cart i {
+                font-size: 22px;
+            }
+
+        .sub-nav {
+            height: 39px;
+            background-color: #232f3e;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+            .sub-nav ul {
+                display: flex;
+                list-style: none;
+                gap: 18px;
+                font-size: 14px;
+            }
+
+            .sub-nav li {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+ 
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, #e3e6e6 100%), url('https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2024/BAU2024/Toys_Desktop_Hero_2x._CB555555555_.jpg') no-repeat center top / cover;
+        }
+
+        .hero-content {
+            padding: 20px;
+        }
+
+            .hero-content h2 {
+                color: #0f1111;
+            }
+
+
+        .main-container {
+            max-width: 1480px;
+            margin: -350px auto 20px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px 20px 15px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 420px;
+        }
+
+            .card h3 {
+                font-size: 21px;
+                font-weight: 700;
+                color: #0f1111;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+
+        .card-img {
+            height: 275px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 12px;
+        }
+
+        .card a {
+            color: #007185;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+            .card a:hover {
+                color: #c7511f;
+                text-decoration: underline;
+            }
+
+ 
+        .sub-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 10px;
+            margin-bottom: 12px;
+        }
+
+            .sub-grid div {
+                display: flex;
+                flex-direction: column;
+            }
+
+                .sub-grid div img {
+                    width: 100%;
+                    height: 102px;
+                    object-fit: cover;
+                }
+
+            .sub-grid p {
+                font-size: 12px;
+                color: #0f1111;
+                margin-top: 4px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+
+        .carousel-section {
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+            .carousel-section h3 {
+                font-size: 21px;
+                font-weight: 700;
+                margin-bottom: 12px;
+                color: #0f1111;
+            }
+
+        .carousel-items {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+            .carousel-items::-webkit-scrollbar {
+                height: 7px;
+            }
+
+            .carousel-items::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            .carousel-items::-webkit-scrollbar-thumb {
+                background: #bbbbbb;
+                border-radius: 4px;
+            }
+
+                .carousel-items::-webkit-scrollbar-thumb:hover {
+                    background: #888888;
+                }
+
+        .item-card img {
+            height: 200px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        footer {
+            background-color: #232f3e;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .back-to-top {
+            background-color: #37475a;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+            .back-to-top:hover {
+                background-color: #485769;
+            }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            padding: 40px 0;
+            background-color: #131a22;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            font-size: 13px;
+            color: #ddd;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+            .footer-col li:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">Amazon</span>
+        </div>
+        <div class="nav-location">
+            <i class="fab fa-amazon"></i>
+            <div>
+                <p class="line-1">Language</p>
+                <p class="line-2">VN</p>
+            </div>
+        </div>
+        <div class="nav-search">
+            <select class="search-select">
+                <option>ALL</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Search Amazon" />
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-tools">
+            <div class="nav-item">
+                <p class="line-1">Language</p>
+                <p class="line-2">EN</p>
+            </div>
+            <div class="nav-item">
+                <p class="line-1">Returns</p>
+                <p class="line-2">& Orders</p>
+            </div>
+            <div class="nav-item nav-cart">
+                <i class="fas fa-cart-plus"></i>
+                <span>Cart</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub Navbar -->
+    <div class="sub-nav">
+        <ul>
+            <li><i class="fas fa-bars"></i> All</li>
+            <li>Today's Deals</li>
+            <li>Prime Video</li>
+            <li>Registry</li>
+            <li>Gift Cards</li>
+            <li>Customer Service</li>
+            <li>Sell</li>
+        </ul>
+    </div>
+
+    <!-- Banner -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Toys for little ones</h2>
+            <div class="card-img" style="background-image: url('https://static.vecteezy.com/system/resources/previews/028/535/140/non_2x/many-colorful-toys-collection-on-the-desk-generative-ai-photo.jpg')"></div>
+        </div>
+    </div>
+
+    <!-- Main Body -->
+    <main class="main-container">
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Get your game on</h3>
+                <div class="card-img" style="background-image: url('https://tse1.mm.bing.net/th/id/OIP.zSox3lDLqSkiL3S2rU3kHgHaEQ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3')"></div>
+                <a href="#">Shop gaming</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>Shop Fashion for less</h3>
+                <div class="sub-grid">
+                    <div><img src="https://tse1.mm.bing.net/th/id/OIP.GKbDVS0grWumDU4BUANodAHaJ3?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="" /><p>Jeans under $50</p></div>
+                    <div><img src="https://i.pinimg.com/originals/c0/fe/52/c0fe5252fa8fb547576261b44c0b6756.jpg" alt="" /><p>Tops under $25</p></div>
+                    <div><img src="https://zapaka.com/cdn/shop/files/412D06LFA036Black_1.jpg?v=1735267742" alt="" /><p>Dresses under $30</p></div>
+                    <div><img src="https://img.kwcdn.com/product/1d18fcec4e0/63efc735-5d74-424e-981c-b686a58c7e9e_1340x1340.jpeg.a.jpeg" alt="" /><p>Shoes under $50</p></div>
+                </div>
+                <a href="#">See all deals</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>Refresh your space</h3>
+                <div class="sub-grid">
+                    <div><img src="https://th.bing.com/th/id/OIP.TogL1QTNUxKdlhwrz1D--AHaE8?r=0&o=7&rs=1&pid=ImgDetMain" alt="" /><p>Dining</p></div>
+                    <div><img src="https://static-asset.amac.us/wp-content/uploads/2023/02/28065712/family-home-house-min.jpg" alt="" /><p>Home</p></div>
+                    <div><img src="https://jobsgo.vn/blog/wp-content/uploads/2023/03/Decor-la-gi.png" alt="" /><p>Kitchen</p></div>
+                    <div><img src="https://tse2.mm.bing.net/th/id/OIP.P4kwcZNdsYGtnypcvD5nsQHaHa?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Health & Beauty</p></div>
+                </div>
+                <a href="#">See more</a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <h3>New home arrivals under $50</h3>
+                <div class="sub-grid">
+                    <div><img src="https://tse4.mm.bing.net/th/id/OIP.ynZ1B_oCrixc5T1RRAlqGQHaE8?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Kitchen & Dining</p></div>
+                    <div><img src="https://tse3.mm.bing.net/th/id/OIP.NQ9xgqnCQOOsJZNKNmXEKAHaE8?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Home Improvement</p></div>
+                    <div><img src="https://jobsgo.vn/blog/wp-content/uploads/2023/03/Decor-la-gi.png" alt="" /><p>Decor</p></div>
+                    <div><img src="https://tse3.mm.bing.net/th/id/OIP.HljbrengRmRz-w2iYBoCPgHaHa?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Bedding & Bath</p></div>
+                </div>
+                <a href="#">Shop the latest arrivals</a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <h3>Top categories in Kitchen appliances</h3>
+                <div class="card-img" style="background-image: url('https://tse3.mm.bing.net/th/id/OIP.UUUKkTwqBdgQO29_k-ek9AHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3')"></div>
+                <a href="#">Explore all products in Kitchen</a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <h3>Fashion trends you like</h3>
+                <div class="sub-grid">
+                    <div><img src="https://tse1.mm.bing.net/th/id/OIP.x4NSUiK87MLR9nx0qbNh7QHaLW?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Dresses</p></div>
+                    <div><img src="https://tse4.mm.bing.net/th/id/OIP.0wIyY1ZyTEy3SIfa4rhb-QHaJD?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Knits</p></div>
+                    <div><img src="https://i5.walmartimages.com/seo/Xysaqa-Mens-Casual-Lightweight-Zip-Bomber-Jackets-Solid-Long-Sleeve-Windbreaker-Coat_f1edc340-15b5-4f63-827b-c629e2db8b13.33a3a730cbb13da20e242e3bc33495f6.jpeg" alt="" /><p>Jackets</p></div>
+                    <div><img src="https://static.vecteezy.com/system/resources/previews/012/809/868/non_2x/gold-and-silver-diamond-gemstone-sapphire-ring-necklaces-and-pearl-earrings-in-luxury-jewelry-box-photo.jpg" alt="" /><p>Jewelry</p></div>
+                </div>
+                <a href="#">Explore more</a>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="card">
+                <h3>Easy updates for elevated spaces</h3>
+                <div class="sub-grid">
+                    <div><img src="https://th.bing.com/th/id/OIP.QbtnxsxpWCBrPZi4OLI2sgHaHa?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Baskets & Bins</p></div>
+                    <div><img src="https://tse2.mm.bing.net/th/id/OIP.HShRpr-B2OrHRuZniauVjAHaEo?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Hardware</p></div>
+                    <div><img src="https://tse1.explicit.bing.net/th/id/OIP.eRkl4KHSCM5FYmTSz-7rwQHaFM?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Accent Furniture</p></div>
+                    <div><img src="https://tse1.mm.bing.net/th/id/OIP.nzplUn-AlVlAlHvvGsNY-wHaEo?r=0&rs=1&pid=ImgDetMain" alt="" /><p>Wallpaper & Paint</p></div>
+                </div>
+                <a href="#">Explore more</a>
+            </div>
+        </div>
+
+        <!-- Carousel Section -->
+        <div class="carousel-section">
+            <h3>Related to items you've viewed</h3>
+            <div class="carousel-items">
+                <div class="item-card"><img src="https://dongphucict.com/public/upload/images/hinhsanpham/mau-thiet-ke-ao-moi-31301679992266.png" alt="Item1" /></div>
+                <div class="item-card"><img src="https://tse2.mm.bing.net/th/id/OIP.f0quARfveaAk86SlAnMpWQHaLH?r=0&rs=1&pid=ImgDetMain" alt="Item2" /></div>
+                <div class="item-card"><img src="https://tse4.mm.bing.net/th/id/OIP.Neg1IgpAmONIJ9OnK8De1AHaKB?r=0&rs=1&pid=ImgDetMain" alt="Item3" /></div>
+                <div class="item-card"><img src="https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/o/13/f70aa732-2c8d-4021-990c-3acf3ba82c38.jpg" alt="Item4" /></div>
+                <div class="item-card"><img src="https://down-ph.img.susercontent.com/file/ph-11134207-7rash-m1xu780bb0sed0" alt="Item5" /></div>
+                <div class="item-card"><img src="https://down-my.img.susercontent.com/file/sg-11134201-22100-tyntcg9albjvae" alt="Item6" /></div>
+                <div class="item-card"><img src="https://i.pinimg.com/736x/f9/f2/42/f9f2422370122c8c9c34811b21f3e72b.jpg" alt="Item7" /></div>
+                <div class="item-card"><img src="https://image.rakuten.co.jp/iimono2/cabinet/mo599281a/293063tuf_17.jpg" alt="Item8" /></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Back to top</div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Get to know Us</h4>
+                <ul>
+                    <li>Careers</li>
+                    <li>Blog</li>
+                    <li>About Amazon</li>
+                    <li>Investor Relations</li>
+                    <li>Amazon Devices</li>
+                    <li>Amazon Science</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Let Us Help You</h4>
+                <ul>
+                    <li>Amazon and COVID-19</li>
+                    <li>Your Account</li>
+                    <li>Your Order</li>
+                    <li>Shipping Rates & Policies</li>
+                    <li>Returns & Replacements</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Amazon payment products</h4>
+                <ul>
+                    <li>Amazon Business Card</li>
+                    <li>Shop with Points</li>
+                    <li>Reload Your Balance</li>
+                    <li>Amazon Currency Converter</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
